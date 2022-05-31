@@ -42,7 +42,7 @@ create table username(id integer primary key autoincrement, name text);
 
 ## データ
 
-``` 
+``` sql
 sqlite> select * from table1;
 1|foo
 2|bar
@@ -101,7 +101,7 @@ sqlite> select
 ## joinせずに複数テーブルの値を並べる
 
 ``` sql
-select 
+sqlite> select 
    ...>     user.id , user.name , t1.value, t2.value
    ...> FROM 
    ...>     (select user.id, user.name from username as user where user.id = 1) as user ,
