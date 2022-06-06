@@ -1,7 +1,13 @@
 select 
     T1.table_a_key, T1.arg , T2.cnt , T3.cnt
 from 
-    Table_A T1
+    (
+        select 
+            table_a_key,
+            arg
+        from Table_A
+        where arg = 'A'
+    ) as T1
     left join (
         select
             table_a_key,
